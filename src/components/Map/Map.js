@@ -9,7 +9,7 @@ export default class Map extends Component {
                 <div className="map">
                     <h4>Infection in the world</h4>
                     <LeafletMap style={{ borderRadius: "20px", height: "290px" }} center={this.props.center} zoom={this.props.zoom}>
-                        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors' />
+                        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" attribution='&copy; <a href="https://osm.org/copyright">OpenStreetMap</a> contributors' />
                         {showDataOnMap(this.props.countryData)}
                     </LeafletMap>
                 </div>

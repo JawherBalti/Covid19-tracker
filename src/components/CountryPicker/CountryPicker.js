@@ -10,7 +10,7 @@ export default class CountryPicker extends React.Component {
 
     componentDidMount = async () => {
 
-        const countries = await Axios.get("http://disease.sh/v3/covid-19/countries")
+        const countries = await Axios.get("https://disease.sh/v3/covid-19/countries")
         this.setState({
             countryData: countries
         })

@@ -30,12 +30,12 @@ export default class App extends React.Component {
       date: date.data.lastUpdate
     })
 
-    const { data } = await axios.get("http://disease.sh/v3/covid-19/all")
+    const { data } = await axios.get("https://disease.sh/v3/covid-19/all")
     this.setState({
       totalData: data
     })
 
-    const countryData = await axios.get("http://disease.sh/v3/covid-19/countries")
+    const countryData = await axios.get("https://disease.sh/v3/covid-19/countries")
     this.setState({
       countryData: countryData.data
     })
@@ -43,7 +43,7 @@ export default class App extends React.Component {
 
   countryChangeState = async (selectedCountry) => {
     if (selectedCountry) {
-      const { data } = await axios.get(`http://disease.sh/v3/covid-19/countries/${selectedCountry}`)
+      const { data } = await axios.get(`https://disease.sh/v3/covid-19/countries/${selectedCountry}`)
       this.setState({
         totalData: data,
         country: selectedCountry,
@@ -55,7 +55,7 @@ export default class App extends React.Component {
       })
     }
     else {
-      const { data } = await axios.get("http://disease.sh/v3/covid-19/all")
+      const { data } = await axios.get("https://disease.sh/v3/covid-19/all")
       this.setState({
         totalData: data,
         country: selectedCountry,

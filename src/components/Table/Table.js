@@ -14,7 +14,6 @@ export default class Table extends Component {
     }
 
     render() {
-        console.log(this.state.sortOption)
         if (this.state.sortOption === "cases")
             return (
 
