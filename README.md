@@ -9,6 +9,10 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 1. `npm i`
 1. `npm start`
 
+## Deployment
+1. Netlify
+1. URL: https://trackvid19.netlify.app
+
 ## Demo
 
 <p align="center">
