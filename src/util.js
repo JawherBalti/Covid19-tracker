@@ -54,7 +54,7 @@ export const showDataOnMap = (data) => (
             radius={Math.sqrt(country.cases) * 800}>
             <Popup className="info-container">
                 <div >
-                    <div className="info-flag" style={{ backgroundImage: `url(${country.countryInfo.flag})`}}></div>
+                    <div className="info-flag"><img src={`${country.countryInfo.flag}`} alt=""/></div>
                     <div className="info-name">{country.country}</div>
                     <div className="info-cases">Cases: {numeral(country.cases).format("0,0")}</div>
                     <div className="info-recovered">Recovered: {numeral(country.recovered).format("0,0")}</div>
