@@ -164,4 +164,16 @@
     .darkMode {
       height: 50%;
     }
+
+    .light-button{
+      margin-left: 2px;
+      width: 80px;
+      margin-top: 602px;
+    }
+
+    .dark-button{
+      margin-left: 2px;
+      width: 80px;
+      margin-top: 602px;
+    }
 }
