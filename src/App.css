@@ -76,14 +76,14 @@
   .moon{
     color: rgb(255, 243, 69);
     margin-top: 2px;
-    margin-left: 2px;
-  }
-
-  .sun{
-    color: rgb(250, 180, 67);
-    margin-top: 2px;
     margin-left: 45px;
   }
+  .sun{
+    color: rgb(255, 184, 69);
+    margin-top: 2px;
+    margin-left: 4px;
+  }
+  
 
   .ball{
     content: '';

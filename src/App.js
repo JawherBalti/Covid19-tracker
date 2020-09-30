@@ -82,14 +82,14 @@ export default class App extends React.Component {
 
 
   render() {
-    if (this.state.showMap)
+    if (!this.state.showMap)
       return (
         <div className={this.state.dark ? "dark-mode-app" : "light-mode-app"}>
           <Card style={{ border: "2px solid rgb(70, 70, 70)", borderRadius: "20px" }}>
             <input onChange={this.toggleMode} type="checkbox" className="checkbox" id="checkbox" />
             <label htmlFor="checkbox" className="label">
-              <Brightness3 fontSize="small" className="moon" />
               <Brightness7 fontSize="small" className="sun" />
+              <Brightness3 fontSize="small" className="moon" />
               <i className="ball"></i>
             </label>
             <button className={this.state.dark ? "dark-button" : "light-button"} onClick={this.toggleMap}>Show Chart</button>
@@ -117,8 +117,8 @@ export default class App extends React.Component {
           <Card style={{ border: "2px solid rgb(70, 70, 70)", borderRadius: "20px" }}>
             <input onChange={this.toggleMode} type="checkbox" className="checkbox" id="checkbox" />
             <label htmlFor="checkbox" className="label">
-              <Brightness3 fontSize="small" className="moon" />
               <Brightness7 fontSize="small" className="sun" />
+              <Brightness3 fontSize="small" className="moon" />
               <i className="ball"></i>
             </label>
             <button className={this.state.dark ? "dark-button" : "light-button"} onClick={this.toggleMap}>Show map</button>
