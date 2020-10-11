@@ -12,6 +12,8 @@ export const sortByCases = (data) => {
         else {
             return 1
         }
+
+        //or return a.cases - b.cases
     })
     return sortedData
 }
@@ -45,8 +47,9 @@ export const sortByRecoveries = (data) => {
 }
 
 export const showDataOnMap = (data) => (
-    data.map(country => (
+    data.map((country,i) => (
         <Circle
+            key={i}
             center={[country.countryInfo.lat, country.countryInfo.long]}
             fillOpacity={0.4}
             color="#CC1034"

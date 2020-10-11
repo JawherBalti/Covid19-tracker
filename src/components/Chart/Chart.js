@@ -5,79 +5,102 @@ import './Chart.css'
 
 export default class Chart extends React.Component {
     state = {
-        dailyData: {}
+        dates: [],
+        cases: [],
+        deaths: [],
+        recovered: []
     }
 
     componentDidMount = async () => {
-        const { data } = await Axios.get("https://covid19.mathdro.id/api/daily")
+
+        const dailydata = await Axios.get("https://corona.lmao.ninja/v2/historical/all")
+
         this.setState({
-            dailyData: data
+            dates: Object.keys(dailydata.data.cases),
+            cases: Object.values(dailydata.data.cases),
+            deaths: Object.values(dailydata.data.deaths),
+            recovered: Object.values(dailydata.data.recovered)
         })
     }
     render() {
         const lineChart = (
-            this.state.dailyData.length ? (
-            <Line data={{
-                labels: this.state.dailyData.map(({ reportDate }) => reportDate),
+            this.state.dates.length ? (
+                <Line data={{
+                    labels: this.state.dates.map(date => date),
+                    datasets: [{
+                        data: this.state.cases.map(cases => cases),
+                        label: 'Infections',
+                        borderColor: 'rgba(253, 255, 122)',
+                        backgroundColor: "rgba(253, 255, 122,0.5)",
+                        fill: true
+                    },
+                    {
+                        data: this.state.deaths.map(deaths => deaths),
+                        label: 'Deaths',
+                        borderColor: 'rgba(255, 122, 122)',
+                        backgroundColor: "rgba(255, 122, 122,0.5)",
+                        fill: true
+                    },
+                    {
+                        data: this.state.recovered.map(recovered => recovered),
+                        label: 'Recoveries',
+                        borderColor: 'rgba(122, 255, 178)',
+                        backgroundColor: "rgba(122, 255, 178, 0.5)",
+                        fill: true
+                    }]
+
+                }}
+                    options={{
+                        legend: {
+                            labels: {
+                                fontColor: "#fff"
+                            }
+                        },
+
+                        title: { fontColor: "#fff", display: true, text: "Total data in the last 30 days" },
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    fontColor: "white"
+                                },
+                                gridLines: {
+                                    color: "#FFFFFF"
+                                },
+                            }],
+                            xAxes: [{
+                                ticks: {
+                                    fontColor: "white"
+                                },
+                                gridLines: {
+                                    color: "#FFFFFF"
+                                },
+                            }]
+                        }
+                    }} />) : null
+        )
+
+        const darkLineChart = (
+            this.state.dates.length ? (<Line data={{
+                labels: this.state.dates.map(date => date),
                 datasets: [{
-                    data: this.state.dailyData.map(({ confirmed: { total } }) => total),
+                    data: this.state.cases.map(cases => cases),
                     label: 'Infections',
-                    borderColor: 'rgba(253, 255, 122, 0.87)',
+                    borderColor: 'rgba(253, 255, 122)',
                     backgroundColor: "rgba(253, 255, 122,0.5)",
                     fill: true
                 },
                 {
-                    data: this.state.dailyData.map(({ deaths: { total } }) => total),
+                    data: this.state.deaths.map(deaths => deaths),
                     label: 'Deaths',
-                    borderColor: 'rgba(255, 122, 122, 0.87)',
+                    borderColor: 'rgba(255, 122, 122)',
                     backgroundColor: "rgba(255, 122, 122,0.5)",
-                    fill: true
-                }]
-
-            }}
-                options={{
-                    legend: {
-                        labels: {
-                            fontColor: "#fff"
-                        }
-                    },
-                    title: { fontColor: "#fff" },
-                    scales: {
-                        yAxes: [{
-                            ticks: {
-                                fontColor: "white"
-                            },
-                            gridLines: {
-                                color: "#FFFFFF"
-                            },
-                        }],
-                        xAxes: [{
-                            ticks: {
-                                fontColor: "white"
-                            },
-                            gridLines: {
-                                color: "#FFFFFF"
-                            },
-                        }]
-                    }
-                }} />) : null
-        )
-
-        const darkLineChart = (
-            this.state.dailyData.length ? (<Line data={{
-                labels: this.state.dailyData.map(({ reportDate }) => reportDate),
-                datasets: [{
-                    data: this.state.dailyData.map(({ confirmed: { total } }) => total),
-                    label: 'Infections',
-                    borderColor: 'rgba(253, 255, 122, 0.87)',
-                    backgroundColor: "rgba(253, 255, 122, 0.5)",
                     fill: true
                 },
                 {
-                    data: this.state.dailyData.map(({ deaths: { total } }) => total),
-                    label: 'Deaths',
-                    borderColor: 'rgba(255, 122, 122, 0.87)',
-                    backgroundColor: "rgba(255, 122, 122, 0.5)",
+                    data: this.state.recovered.map(recovered => recovered),
+                    label: 'Recoveries',
+                    borderColor: 'rgba(122, 255, 178)',
+                    backgroundColor: "rgba(122, 255, 178, 0.5)",
                     fill: true
                 }]
 
@@ -88,7 +111,7 @@ export default class Chart extends React.Component {
                             fontColor: "#000"
                         }
                     },
-                    title: { fontColor: "#000" },
+                    title: { fontColor: "#000", display: true, text: "Total data in the last 30 days" },
                     scales: {
                         yAxes: [{
                             ticks: {
@@ -112,7 +135,7 @@ export default class Chart extends React.Component {
 
         const barChart = (
 
-            this.props.totalData.cases? (<Bar data={{
+            this.props.totalData.cases ? (<Bar data={{
                 labels: ['recoveries', 'deaths', 'infections'],
                 datasets: [{
                     label: 'people',

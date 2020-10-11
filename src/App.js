@@ -75,7 +75,6 @@ export default class App extends React.Component {
     this.setState({
       showMap: !this.state.showMap
     })
-    console.log(this.state.showMap)
   }
   //<button onClick={this.toggleMap}>Show map</button>
   //<Chart dark={this.state.dark} totalData={this.state.totalData} country={this.state.country} />
@@ -93,7 +92,6 @@ export default class App extends React.Component {
               <i className="ball"></i>
             </label>
             <button className={this.state.dark ? "dark-button" : "light-button"} onClick={this.toggleMap}>Show Chart</button>
-
             <CardContent className={this.state.dark ? "darkMode" : "lightMode"}>
               <Cards dark={this.state.dark} date={this.state.date} totalData={this.state.totalData} />
               <CountryPicker center={this.state.mapCenter} dark={this.state.dark} toggleMode={this.toggleMode} countryChangeState={this.countryChangeState} />
