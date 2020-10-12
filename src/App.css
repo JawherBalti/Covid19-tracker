@@ -95,6 +95,7 @@
     border-radius: 20px;
     box-shadow: 0 0 0 1px #232323;
     transition: .5s;
+    cursor: pointer;
   }
 
   .checkbox {
@@ -114,15 +115,16 @@
     text-align: center;
     width: 100px;
     padding: 5px;
-    font-size: 12px;
     color: #000;
-    font-weight: 200;
-    border: 2px solid #aaa;
+    font-size: 15px;
+    font-weight: 800;
+    border: 2px solid rgb(0, 0, 0);
     cursor: pointer;
     border-radius: 20px;
-    background: linear-gradient(0deg, #fff, #6b6b6b);
-    box-shadow: 0 0 0 2px #353535, 0 0 0 2px #3e3e3e;
-  
+    background: linear-gradient(0deg, rgb(255, 255, 255), #e4e4e4);
+  }
+  .light-button:hover{
+    background: linear-gradient(0deg, rgb(255, 255, 255), #ffffff);
   }
 
   .dark-button {
@@ -135,12 +137,16 @@
     padding: 5px;
     font-size: 12px;
     color: #ffffff;
-    font-weight: 200;
+    font-size: 15px;
+    font-weight: 800;
     border: 2px solid #aaa;
     cursor: pointer;
     border-radius: 20px;
     background: linear-gradient(0deg, #000, #6b6b6b);
-    box-shadow: 0 0 0 2px #353535, 0 0 0 2px #3e3e3e;
+    box-shadow: 0 0 0 2px #353535, 0 0 0 2px #3e3e3e; 
+  }
+  .dark-button:hover{
+    background: linear-gradient(0deg, #000, #413f3f);
   }
 
   .button:active{
@@ -166,14 +172,23 @@
     }
 
     .light-button{
-      margin-left: 2px;
+      margin-left: 10px;
       width: 80px;
       margin-top: 602px;
     }
 
     .dark-button{
-      margin-left: 2px;
+      margin-left: 10px;
       width: 80px;
       margin-top: 602px;
     }
+}
+
+@media (max-width: 400px) {
+  .dark-button{
+    margin-left: 120px;
+  }
+  .light-button{
+    margin-left: 120px;
+  }
 }

@@ -91,7 +91,7 @@ export default class App extends React.Component {
               <Brightness3 fontSize="small" className="moon" />
               <i className="ball"></i>
             </label>
-            <button className={this.state.dark ? "dark-button" : "light-button"} onClick={this.toggleMap}>Show Chart</button>
+            <button className={this.state.dark ? "dark-button" : "light-button"} onClick={this.toggleMap}>Chart</button>
             <CardContent className={this.state.dark ? "darkMode" : "lightMode"}>
               <Cards dark={this.state.dark} date={this.state.date} totalData={this.state.totalData} />
               <CountryPicker center={this.state.mapCenter} dark={this.state.dark} toggleMode={this.toggleMode} countryChangeState={this.countryChangeState} />
@@ -119,7 +119,7 @@ export default class App extends React.Component {
               <Brightness3 fontSize="small" className="moon" />
               <i className="ball"></i>
             </label>
-            <button className={this.state.dark ? "dark-button" : "light-button"} onClick={this.toggleMap}>Show map</button>
+            <button className={this.state.dark ? "dark-button" : "light-button"} onClick={this.toggleMap}>Map</button>
 
             <CardContent className={this.state.dark ? "darkMode" : "lightMode"}>
               <Cards dark={this.state.dark} date={this.state.date} totalData={this.state.totalData} />
