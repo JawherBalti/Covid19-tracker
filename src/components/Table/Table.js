@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import { NativeSelect, FormControl } from '@material-ui/core'
 import './Table.css'
 import { sortByCases, sortByRecoveries, sortByDeaths } from '../../util.js'
 
