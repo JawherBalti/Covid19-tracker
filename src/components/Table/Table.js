@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './Table.css'
 import { sortByCases, sortByRecoveries, sortByDeaths } from '../../util.js'
+import CountUp from 'react-countup'
 
 export default class Table extends Component {
     state = {
@@ -37,8 +38,8 @@ export default class Table extends Component {
                             <tbody>
                                 {sortByCases(this.props.countryData).map((country, i) => (
                                     <tr key={i}>
-                                        <td style={{fontWeight:"bold"}}><img style={{ height: "20px", width: "30px" }} alt="" src={country.countryInfo.flag} /> {country.country} </td>
-                                        <td style={{fontWeight:"bold"}}>{country.cases}</td>
+                                        <td style={{fontWeight:"bold"}}><img style={{ height: "20px", width: "30px", border:"2px solid #000" }} alt="" src={country.countryInfo.flag} /> {country.country} </td>
+                                        <td style={{fontWeight:"bold"}}><CountUp start={0} end={country.cases} separator={','} duration={1} /></td>
                                     </tr>
                                 ))}
                             </tbody>
@@ -70,8 +71,8 @@ export default class Table extends Component {
                             <tbody>
                                 {sortByRecoveries(this.props.countryData).map((country, i) => (
                                     <tr key={i}>
-                                        <td style={{fontWeight:"bold"}}><img style={{ height: "20px", width: "30px" }} alt="" src={country.countryInfo.flag} /> {country.country} </td>
-                                        <td style={{fontWeight:"bold"}}>{country.recovered}</td>
+                                        <td style={{fontWeight:"bold"}}><img style={{ height: "20px", width: "30px", border:"2px solid #000" }} alt="" src={country.countryInfo.flag} /> {country.country} </td>
+                                        <td style={{fontWeight:"bold"}}><CountUp start={0} end={country.recovered} separator={','} duration={1} /></td>
                                     </tr>
                                 ))}
                             </tbody>
@@ -104,8 +105,8 @@ export default class Table extends Component {
                             <tbody>
                                 {sortByDeaths(this.props.countryData).map((country, i) => (
                                     <tr key={i}>
-                                        <td style={{fontWeight:"bold"}}><img style={{ height: "20px", width: "30px" }} alt="" src={country.countryInfo.flag} /> {country.country} </td>
-                                        <td style={{fontWeight:"bold"}}>{country.deaths}</td>
+                                        <td style={{fontWeight:"bold"}}><img style={{ height: "20px", width: "30px", border:"2px solid #000" }} alt="" src={country.countryInfo.flag} /> {country.country} </td>
+                                        <td style={{fontWeight:"bold"}}><CountUp start={0} end={country.deaths} separator={','} duration={1} /></td>
                                     </tr>
                                 ))}
                             </tbody>
