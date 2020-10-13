@@ -95,7 +95,7 @@ export default class App extends React.Component {
             <CardContent className={this.state.dark ? "darkMode" : "lightMode"}>
               <Cards dark={this.state.dark} date={this.state.date} totalData={this.state.totalData} />
               <CountryPicker center={this.state.mapCenter} dark={this.state.dark} toggleMode={this.toggleMode} countryChangeState={this.countryChangeState} />
-              <Map countryData={this.state.countryData} center={this.state.mapCenter} zoom={this.state.mapZoom} />
+              <Map country={this.state.country} countryData={this.state.countryData} center={this.state.mapCenter} zoom={this.state.mapZoom} />
             </CardContent>
           </Card>
 

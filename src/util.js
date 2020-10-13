@@ -53,14 +53,14 @@ export const showDataOnMap = (data) => (
             center={[country.countryInfo.lat, country.countryInfo.long]}
             fillOpacity={0.4}
             color="#CC1034"
-            fillColor="#CC1034"
-            radius={Math.sqrt(country.cases) * 800}>
+            fillColor="#000"
+            radius={Math.sqrt(country.cases) * 400}>
             <Popup className="info-container">
                 <div >
                     <div className="info-flag"><img src={`${country.countryInfo.flag}`} alt=""/></div>
                     <div className="info-name">{country.country}</div>
-                    <div className="info-cases">Cases: {numeral(country.cases).format("0,0")}</div>
-                    <div className="info-recovered">Recovered: {numeral(country.recovered).format("0,0")}</div>
+                    <div className="info-cases">Infections: {numeral(country.cases).format("0,0")}</div>
+                    <div className="info-recovered">Recoveries: {numeral(country.recovered).format("0,0")}</div>
                     <div className="info-deaths">Deaths: {numeral(country.deaths).format("0,0")}</div>
                 </div>
             </Popup>
