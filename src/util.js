@@ -54,7 +54,7 @@ export const showDataOnMap = (data) => (
             fillOpacity={0.4}
             color="#CC1034"
             fillColor="#000"
-            radius={Math.sqrt(country.cases) * 400}>
+            radius={Math.sqrt(country.cases) * 100}>
             <Popup className="info-container">
                 <div >
                     <div className="info-flag"><img src={`${country.countryInfo.flag}`} alt=""/></div>

@@ -19,7 +19,7 @@ export default class Table extends Component {
 
                 <div className="table" style={{width:"339px"}}>
                     <div style={{ display: "flex" }}>
-                        <h4 style={this.props.dark ? { color: "#fff" } : { color: "#000" }}>Data by country:</h4>
+                        <h4 style={this.props.dark ? { color: "#fff" } : { color: "#000" }}>Sort countries by:</h4>
                             <select onChange={(e) => this.changeSortOption(e.target.value)} style={this.props.dark ? { color: "#fff" } : { color: "#000" }} className={this.props.dark ? "darkDrop" : "lightDrop"}>
                                 <option style={this.props.dark ? { backgroundColor: "rgb(26, 26, 26)" } : { backgroundColor: "#fff" }} value="cases">Sort by</option>
                                 <option style={this.props.dark ? { backgroundColor: "rgb(26, 26, 26)" } : { backgroundColor: "#fff" }} value="cases">Number of Infections</option>
@@ -52,7 +52,7 @@ export default class Table extends Component {
 
                 <div className="table" style={{width:"339px"}}>
                     <div style={{ display: "flex" }}>
-                        <h4 style={this.props.dark ? { color: "#fff" } : { color: "#000" }}>Data by country:</h4>
+                        <h4 style={this.props.dark ? { color: "#fff" } : { color: "#000" }}>Sort countries by:</h4>
                             <select onChange={(e) => this.changeSortOption(e.target.value)} style={this.props.dark ? { color: "#fff" } : { color: "#000" }} className={this.props.dark ? "darkDrop" : "lightDrop"}>
                                 <option style={this.props.dark ? { backgroundColor: "rgb(26, 26, 26)" } : { backgroundColor: "#fff" }} value="cases">Sort by</option>
                                 <option style={this.props.dark ? { backgroundColor: "rgb(26, 26, 26)" } : { backgroundColor: "#fff" }} value="cases">Number of Infections</option>
@@ -86,9 +86,9 @@ export default class Table extends Component {
 
                 <div className="table" style={{width:"339px"}}>
                     <div style={{ display: "flex" }}>
-                        <h4 style={this.props.dark ? { color: "#fff" } : { color: "#000" }}>Data by country:</h4>
+                        <h4 style={this.props.dark ? { color: "#fff" } : { color: "#000" }}>Sort countries by:</h4>
                             <select onChange={(e) => this.changeSortOption(e.target.value)} style={this.props.dark ? { color: "#fff" } : { color: "#000" }} className={this.props.dark ? "darkDrop" : "lightDrop"}>
-                                <option style={this.props.dark ? { backgroundColor: "rgb(26, 26, 26)" } : { backgroundColor: "#fff" }} value="cases">Sorty by</option>
+                                <option style={this.props.dark ? { backgroundColor: "rgb(26, 26, 26)" } : { backgroundColor: "#fff" }} value="cases">Sort by</option>
                                 <option style={this.props.dark ? { backgroundColor: "rgb(26, 26, 26)" } : { backgroundColor: "#fff" }} value="cases">Number of Infections</option>
                                 <option style={this.props.dark ? { backgroundColor: "rgb(26, 26, 26)" } : { backgroundColor: "#fff" }} value="recovered">Number of recoveries</option>
                                 <option style={this.props.dark ? { backgroundColor: "rgb(26, 26, 26)" } : { backgroundColor: "#fff" }} value="deaths">Number of deaths</option>
